@@ -1,0 +1,19 @@
+<h1>Projects</h1>
+<table>
+  <thead>
+    <td>Name</td>
+    <td>Hash</td>
+  </thead>
+  {{#each projects}}
+  <tr>
+    <td>{{name}}</td>
+    <td><a href="https://instant.io/#{{torrent_hash}}">{{torrent_hash}}</a></td>
+  </tr>
+  {{/each}}
+</table>
+<h1>Create New</h1>
+<form action="/project/new" method="post">
+  <input type="text" name="name"></input>
+  <input type="text" name="torrent_hash"></input>
+  <button type="submit">Create</button>
+</form>
