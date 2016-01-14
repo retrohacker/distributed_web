@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "prestart": "browserify client/**/*.js -o bundle.js",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "bole": "^2.0.0",
+    "browserify": "^13.0.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.3",
+    "mustache": "^2.2.1",
+    "node-uuid": "^1.4.7"
+  }
+}
