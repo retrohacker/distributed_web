@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="/deps/webtorrent-0.72.1.min.js"></script>
+    <script src="/scripts/upload.js"></script>
+    <style>
+      .folder, .file {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="upload" onchange="addFile()" multiple></input>
+    <input type="button" id="new_folder" value="New Folder" onclick="addFolder()"></input>
+    <div id='tree'></div>
+    <input type="button" id="create_torrent" value="Create Torrent" onclick="create_torrent()"></input>
+    <div id='hash'></div>
+  </body>
+</html>

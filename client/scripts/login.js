@@ -5,7 +5,7 @@ var User = {} // eslint-disable-line no-unused-vars
 // Force user to login or register through reroute
 ;(function () {
   // Allow user to stay on register screen
-  if (document.location.toString().contains('register')) {
+  if (document.location.toString().indexOf('register') !== -1) {
     return
   }
 

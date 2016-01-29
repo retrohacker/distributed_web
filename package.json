@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "prestart": "browserify client/**/*.js -o bundle.js",
     "start": "node server/index.js"
   },
   "dependencies": {

@@ -52,10 +52,10 @@ app.use(function (req, res, next) {
   for (var user in Users) {
     if (Users[user]['session'] === session) {
       req.user = Users[user]
-      return next()
+      break
     }
   }
-  console.log(session)
+  return next()
 })
 
 app.post('/register', function register (req, res) {
@@ -114,15 +114,18 @@ app.post('/project/new', function (req, res) {
     torrent_hash: torrent_hash
   }
 
-  return res.redirect('/projects.html')
+  return res.status('202').end()
 })
 
 app.get('/projects', function (req, res) {
   var projects = []
+  if (!req.user) {
+    return res.json({ projects: [] }).end()
+  }
   for (var project in req.user.Projects) {
     projects.push(req.user.Projects[project])
   }
-  res.json({ projects: projects }).end()
+  return res.json({ projects: projects }).end()
 })
 
 app.get('/self', function (req, res) {
@@ -135,10 +138,6 @@ app.get('/self', function (req, res) {
 
 /* Serve static files */
 app.use(express.static(path.join(__dirname, '..', 'client')))
-
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'))
-})
 
 /* Start app */
 app.listen('8080', function (e) {
