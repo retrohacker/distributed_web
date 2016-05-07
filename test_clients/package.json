@@ -1,0 +1,12 @@
+{
+  "title": "Distributed Web",
+  "name": "distributedweb",
+  "version": "0.0.1",
+  "description": "Torrent driven static web",
+  "main": "index.js",
+  "author": "William Blankenship <william.jblankenship@gmail.com>",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}

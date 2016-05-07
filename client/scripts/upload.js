@@ -158,7 +158,8 @@ function findNode (root, id) {
 }
 
 function create_torrent () { // eslint-disable-line no-unused-vars
-  client.seed(getFileList(), function (torrent) {
+  client.seed(getFileList(), { name: '/' }, function (torrent) {
+    console.log(torrent)
     document.getElementById('hash').innerHTML = '<br><br><b>Torrent:</b> <i>' + torrent.infoHash + '</i>'
   })
 }

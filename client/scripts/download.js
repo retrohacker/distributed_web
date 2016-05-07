@@ -15,9 +15,8 @@ function renderFromTorrent (torrent) {
   console.log('Downloaded torrent!')
   console.log(torrent.files)
   var index = null
-  var remove = 'mokingjay.png/'
   for (var i = 0; i < torrent.files.length; i++) {
-    var path = torrent.files[i].path.substring(remove.length + 1)
+    var path = torrent.files[i].path
     console.log(torrent.files[i].path)
     console.log(torrent.files[i])
     console.log(path)
@@ -28,8 +27,8 @@ function renderFromTorrent (torrent) {
   window.async.each(torrent.files, function (file, cb) {
     file.getBlobURL(function (e, bloburl) {
       if (e) throw e
-      console.log('Adding the following to local storage:', file.path.substring(remove.length + 1))
-      window.localforage.setItem(file.path.substring(remove.length + 1), bloburl).then(function () { cb() })
+      console.log('Adding the following to local storage:', file.path)
+      window.localforage.setItem(file.path, bloburl).then(function () { cb() })
     })
   }, function (e) {
     if (e) throw e
