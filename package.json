@@ -4,8 +4,8 @@
   },
   "dependencies": {
     "body-parser": "^1.14.2",
-    "bole": "^2.0.0",
-    "browserify": "^13.0.0",
+    "bole": "^3.0.2",
+    "browserify": "^14.3.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.3",
     "mustache": "^2.2.1",
